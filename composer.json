@@ -1,0 +1,54 @@
+{
+    "name": "torralbodavid/simple-recaptcha-v3",
+    "description": "Simple reCAPTCHA v3 integration",
+    "keywords": [
+        "torralbodavid",
+        "simple-recaptcha-v3"
+    ],
+    "homepage": "https://github.com/torralbodavid/simple-recaptcha-v3",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "David Torralbo Pérez",
+            "email": "davidtorralboperez@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Torralbodavid\\SimpleRecaptchaV3\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Torralbodavid\\SimpleRecaptchaV3\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Torralbodavid\\SimpleRecaptchaV3\\SimpleRecaptchaV3ServiceProvider"
+            ],
+            "aliases": {
+                "SimpleRecaptchaV3": "Torralbodavid\\SimpleRecaptchaV3\\SimpleRecaptchaV3Facade"
+            }
+        }
+    }
+}
