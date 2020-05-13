@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Facade;
  */
 class SimpleRecaptchaV3Facade extends Facade
 {
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
     protected static function getFacadeAccessor()
     {
         return 'simple-recaptcha-v3';
