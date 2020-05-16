@@ -3,7 +3,7 @@
     <script type="application/javascript">
         window.onload = function() {
             let form = document.getElementsByName("recaptcha_response")[0].closest('form')
-            prepareCaptcha({{ $action }}, form)
+            prepareCaptcha('{{ $action }}', form)
         }
     </script>
 @endif
