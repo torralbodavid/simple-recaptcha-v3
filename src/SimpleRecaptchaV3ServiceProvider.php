@@ -26,7 +26,6 @@ class SimpleRecaptchaV3ServiceProvider extends ServiceProvider
             ], 'simple-recaptcha-v3-lang');
         }
 
-
         Blade::directive('captcha', function ($action) {
             return "<?php echo view('simple-recaptcha-v3::captcha', ['action' => {$action}]); ?>";
         });
@@ -37,5 +36,10 @@ class SimpleRecaptchaV3ServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'simple-recaptcha-v3');
+
+        $this->app->singleton('simple-recaptcha-v3', function () {
+            return new SimpleRecaptchaV3;
+        });
+
     }
 }
