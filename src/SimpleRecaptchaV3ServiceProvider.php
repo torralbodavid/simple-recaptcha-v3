@@ -30,7 +30,7 @@ class SimpleRecaptchaV3ServiceProvider extends ServiceProvider
             return "<?php echo view('simple-recaptcha-v3::captcha', ['action' => {$action}]); ?>";
         });
 
-        Blade::include('simple-recaptcha-v3::captcha-api', 'captcha_api');
+        Blade::include('simple-recaptcha-v3::captcha-init', 'captcha_init');
     }
 
     public function register()
