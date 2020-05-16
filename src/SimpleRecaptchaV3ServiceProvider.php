@@ -26,16 +26,16 @@ class SimpleRecaptchaV3ServiceProvider extends ServiceProvider
             ], 'simple-recaptcha-v3-lang');
         }
 
-        Blade::include('simple-recaptcha-v3::captcha', 'captcha');
+
+        Blade::directive('captcha', function ($action) {
+            return "<?php echo view('simple-recaptcha-v3::captcha', ['action' => {$action}]); ?>";
+        });
+
         Blade::include('simple-recaptcha-v3::captcha-api', 'captcha_api');
     }
 
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'simple-recaptcha-v3');
-
-        $this->app->singleton('simple-recaptcha-v3', function () {
-            return new SimpleRecaptchaV3;
-        });
     }
 }
