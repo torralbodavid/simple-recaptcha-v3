@@ -5,6 +5,7 @@ return [
     'site_key' => env('CAPTCHA_SITE_KEY', ''),
     'secret_key' => env('CAPTCHA_SECRET_KEY', ''),
     'minimum_score' => env('CAPTCHA_MINIMUM_SCORE', 0.5),
+    'hostname_check' => env('CAPTCHA_HOSTNAME_CHECK', true),
 
     /*
      * Before hide badge, you may read https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed

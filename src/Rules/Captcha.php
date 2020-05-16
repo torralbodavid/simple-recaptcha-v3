@@ -23,6 +23,10 @@ class Captcha implements Rule
         $captcha = new CaptchaService($value);
         $response = $captcha->getResponse();
 
+        if(config('simple-recaptcha-v3.hostname_check') && request()->getHttpHost() === $response->hostname) {
+            return false;
+        }
+
         if (! $response->success || $response->score < config('simple-recaptcha-v3.minimum_score')) {
             return false;
         }
