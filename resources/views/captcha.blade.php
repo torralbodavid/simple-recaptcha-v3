@@ -1,9 +1,7 @@
 @if(config('simple-recaptcha-v3.active'))
-    <input type="hidden" name="recaptcha_response">
+    @php $id = app('simple-recaptcha-v3')->generateId() @endphp
+    <input type="hidden" name="recaptcha_response" id="{{ $id }}">
     <script type="application/javascript">
-        window.onload = function() {
-            let form = document.getElementsByName("recaptcha_response")[0].closest('form')
-            prepareCaptcha('{{ $action }}', form)
-        }
+        prepareCaptcha('{{ $action }}', '{{ $id }}')
     </script>
 @endif
