@@ -7,27 +7,33 @@ use Torralbodavid\SimpleRecaptchaV3\Services\Captcha as CaptchaService;
 
 class Captcha implements Rule
 {
+    protected $response;
+
     /**
      * {@inheritdoc}
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $response)
     {
         if (! config('simple-recaptcha-v3.active')) {
             return true;
         }
 
-        if ($value === null) {
+        if ($response === null) {
             return false;
         }
 
-        $captcha = new CaptchaService($value);
-        $response = $captcha->getResponse();
+        $captcha = new CaptchaService($response);
+        $this->response = (array) $captcha->getResponse();
 
-        if(config('simple-recaptcha-v3.hostname_check') && request()->getHttpHost() === $response->hostname) {
-            return true;
+        if(! empty($this->response['error-codes'])) {
+            return false;
         }
 
-        if (! $response->success || $response->score < config('simple-recaptcha-v3.minimum_score')) {
+        if(config('simple-recaptcha-v3.hostname_check') && request()->getHttpHost() !== $this->response['hostname']) {
+            return false;
+        }
+
+        if (! $this->response['success'] || $this->response['score'] < config('simple-recaptcha-v3.minimum_score')) {
             return false;
         }
 
@@ -39,6 +45,6 @@ class Captcha implements Rule
      */
     public function message()
     {
-        return 'simple-recaptcha-v3::messages.failed';
+        return "simple-recaptcha-v3::messages.{$this->response['error-codes'][0]}";
     }
 }
