@@ -78,8 +78,21 @@ class SnippetsTest extends TestCase
         config()->set('simple-recaptcha-v3.active', true);
         $renderedView = view('captcha')->render();
 
-        $this->assertStringContainsString('<script src="https://www.google.com/recaptcha/api.js?render=', $renderedView);
+        $this->assertStringContainsString('<script async defer src="https://www.google.com/recaptcha/api.js?render=', $renderedView);
         $this->assertStringContainsString('function prepareCaptcha(action, id) {', $renderedView);
         $this->assertStringContainsString('<input type="hidden" name="recaptcha_response"', $renderedView);
+    }
+
+    /** @test */
+    public function scripts_are_loaded_with_async_and_defer()
+    {
+        config()->set('simple-recaptcha-v3.active', true);
+        $renderedView = view('captcha')->render();
+        $this->assertStringContainsString('<script async defer src="https://www.google.com/recaptcha/api.js?render=', $renderedView);
+        $this->assertStringContainsString('<script async defer type="application/javascript">
+        prepareCaptcha', $renderedView);
+        $this->assertStringContainsString('<script async defer type="application/javascript">
+        function prepareCaptcha(action, id) ', $renderedView);
+
     }
 }
