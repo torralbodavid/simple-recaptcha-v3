@@ -29,7 +29,7 @@ composer require torralbodavid/simple-recaptcha-v3
 </html>
 ```
 
-2. Include below your form initialization tag, the `@captcha('xxxx')` blade directive. Replace xxxx with your desired [action](https://developers.google.com/recaptcha/docs/v3#actions){:target="_blank" rel="noopener"}.
+2. Include below your form initialization tag, the `@captcha('xxxx')` blade directive. Replace xxxx with your desired [action](https://developers.google.com/recaptcha/docs/v3#actions).
 
 ```html
 <form method="..." action="...">
@@ -43,6 +43,10 @@ composer require torralbodavid/simple-recaptcha-v3
 `'recaptcha_response' => new Captcha`
 
 ```php
+use Torralbodavid\SimpleRecaptchaV3\Rules\Captcha;
+
+...
+
 $request->validate([
     ...
     'recaptcha_response' => new Captcha,
