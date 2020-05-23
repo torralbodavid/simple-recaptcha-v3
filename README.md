@@ -15,6 +15,42 @@ You can install the package via composer:
 composer require torralbodavid/simple-recaptcha-v3
 ```
 
+## Usage
+
+1. To get started, you must include at the very bottom of your head tag from the pages you want to protect with reCaptcha, the `@captcha_init` blade directive. This will start loading Google reCAPTCHA API.
+
+```html
+<html>
+    <head>
+        ...
+        
+        @captcha_init
+    </head>
+</html>
+```
+
+2. Include below your form initialization `@captcha('xxxx')` tag. Replace xxxx with your desired [action](https://developers.google.com/recaptcha/docs/v3#actions).
+
+```html
+<form method="..." action="...">
+    @captcha('login')
+    ...
+</form>
+```
+
+3. To sum up, add the following rule on your form validation:
+
+`'recaptcha_response' => new Captcha`
+
+```php
+$request->validate([
+    ...
+    'recaptcha_response' => new Captcha,
+]);
+```
+
+Have fun!
+
 ### Testing
 
 ``` bash
