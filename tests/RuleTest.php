@@ -45,7 +45,7 @@ class RuleTest extends TestCase
                     'score' => 0.9,
                     'challenge_ts' => '1234',
                     'hostname' => 'localhost',
-                    'error-codes' => []
+                    'error-codes' => [],
                 ]);
         });
 
@@ -66,7 +66,7 @@ class RuleTest extends TestCase
                     'score' => 0.9,
                     'challenge_ts' => '1234',
                     'hostname' => 'localhost',
-                    'error-codes' => ['error' => true]
+                    'error-codes' => ['error' => true],
                 ]);
         });
 
@@ -87,7 +87,7 @@ class RuleTest extends TestCase
                     'score' => 0.9,
                     'challenge_ts' => '1234',
                     'hostname' => 'unsecure.website',
-                    'error-codes' => []
+                    'error-codes' => [],
                 ]);
         });
 
@@ -109,7 +109,7 @@ class RuleTest extends TestCase
                     'score' => 0.9,
                     'challenge_ts' => '1234',
                     'hostname' => 'unsecure.website',
-                    'error-codes' => []
+                    'error-codes' => [],
                 ]);
         });
 
@@ -130,7 +130,7 @@ class RuleTest extends TestCase
                     'score' => 0.9,
                     'challenge_ts' => '1234',
                     'hostname' => 'localhost',
-                    'error-codes' => []
+                    'error-codes' => [],
                 ]);
         });
 
@@ -152,7 +152,7 @@ class RuleTest extends TestCase
                     'score' => 0.4,
                     'challenge_ts' => '1234',
                     'hostname' => 'localhost',
-                    'error-codes' => []
+                    'error-codes' => [],
                 ]);
         });
 
@@ -174,7 +174,7 @@ class RuleTest extends TestCase
                     'score' => 0.5,
                     'challenge_ts' => '1234',
                     'hostname' => 'localhost',
-                    'error-codes' => []
+                    'error-codes' => [],
                 ]);
         });
 
