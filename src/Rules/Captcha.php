@@ -27,11 +27,11 @@ class Captcha implements Rule
 
         $this->serviceResponse = $this->getResponse(new CaptchaService());
 
-        if(! empty($this->serviceResponse['error-codes'])) {
+        if (! empty($this->serviceResponse['error-codes'])) {
             return false;
         }
 
-        if(config('simple-recaptcha-v3.hostname_check') && request()->getHttpHost() !== $this->serviceResponse['hostname']) {
+        if (config('simple-recaptcha-v3.hostname_check') && request()->getHttpHost() !== $this->serviceResponse['hostname']) {
             return false;
         }
 

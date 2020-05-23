@@ -13,9 +13,8 @@ class SimpleRecaptchaV3
 
     public function generateId(): string
     {
-        $this->id = $this->id+1;
+        $this->id = $this->id + 1;
 
         return encrypt($this->id);
     }
-
 }
