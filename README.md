@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/torralbodavid/simple-recaptcha-v3.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/simple-recaptcha-v3)
 [![Build Status](https://img.shields.io/travis/torralbodavid/simple-recaptcha-v3/master.svg?style=flat-square)](https://travis-ci.org/torralbodavid/simple-recaptcha-v3)
+[![StyleCI](https://github.styleci.io/repos/263758912/shield)](https://github.styleci.io/repos/263758912)
 [![Quality Score](https://img.shields.io/scrutinizer/g/torralbodavid/simple-recaptcha-v3.svg?style=flat-square)](https://scrutinizer-ci.com/g/torralbodavid/simple-recaptcha-v3)
 [![Total Downloads](https://img.shields.io/packagist/dt/torralbodavid/simple-recaptcha-v3.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/simple-recaptcha-v3)
 
