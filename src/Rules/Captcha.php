@@ -7,7 +7,8 @@ use Torralbodavid\SimpleRecaptchaV3\Services\Captcha as CaptchaService;
 
 class Captcha implements Rule
 {
-    protected $response;
+    protected $serviceResponse;
+    protected $userResponse;
 
     /**
      * {@inheritdoc}
@@ -18,22 +19,23 @@ class Captcha implements Rule
             return true;
         }
 
-        if ($response === null) {
+        $this->userResponse = $response;
+
+        if ($this->userResponse === null) {
             return false;
         }
 
-        $captcha = new CaptchaService($response);
-        $this->response = (array) $captcha->getResponse();
+        $this->serviceResponse = $this->getResponse(new CaptchaService());
 
-        if(! empty($this->response['error-codes'])) {
+        if(! empty($this->serviceResponse['error-codes'])) {
             return false;
         }
 
-        if(config('simple-recaptcha-v3.hostname_check') && request()->getHttpHost() !== $this->response['hostname']) {
+        if(config('simple-recaptcha-v3.hostname_check') && request()->getHttpHost() !== $this->serviceResponse['hostname']) {
             return false;
         }
 
-        if (! $this->response['success'] || $this->response['score'] < config('simple-recaptcha-v3.minimum_score')) {
+        if (! $this->serviceResponse['success'] || $this->serviceResponse['score'] < config('simple-recaptcha-v3.minimum_score')) {
             return false;
         }
 
@@ -45,6 +47,11 @@ class Captcha implements Rule
      */
     public function message()
     {
-        return "simple-recaptcha-v3::messages.{$this->response['error-codes'][0]}";
+        return "simple-recaptcha-v3::messages.{$this->serviceResponse['error-codes'][0]}";
+    }
+
+    protected function getResponse(CaptchaService $service): array
+    {
+        return (array) $service($this->userResponse);
     }
 }
