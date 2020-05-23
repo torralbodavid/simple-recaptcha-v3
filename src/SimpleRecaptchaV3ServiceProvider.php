@@ -9,8 +9,8 @@ class SimpleRecaptchaV3ServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'simple-recaptcha-v3');
-         $this->loadViewsFrom(__DIR__.'/../resources/views', 'simple-recaptcha-v3');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'simple-recaptcha-v3');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'simple-recaptcha-v3');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -40,6 +40,5 @@ class SimpleRecaptchaV3ServiceProvider extends ServiceProvider
         $this->app->singleton('simple-recaptcha-v3', function () {
             return new SimpleRecaptchaV3;
         });
-
     }
 }
