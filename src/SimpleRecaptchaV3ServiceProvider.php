@@ -15,15 +15,15 @@ class SimpleRecaptchaV3ServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('simple-recaptcha-v3.php'),
-            ], 'simple-recaptcha-v3-config');
+            ], 'config');
 
             $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/simple-recaptcha-v3'),
-            ], 'simple-recaptcha-v3-views');
+            ], 'views');
 
             $this->publishes([
                 __DIR__.'/../resources/lang' => resource_path('lang/vendor/simple-recaptcha-v3'),
-            ], 'simple-recaptcha-v3-lang');
+            ], 'lang');
         }
 
         Blade::directive('captcha', function ($action) {
