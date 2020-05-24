@@ -13,7 +13,7 @@ This repository contains simple reCAPTCHA v3 integration for your Laravel applic
 You can install the package via composer:
 
 ```bash
-composer require torralbodavid/simple-recaptcha-v3
+    composer require torralbodavid/simple-recaptcha-v3
 ```
 
 ## Usage
