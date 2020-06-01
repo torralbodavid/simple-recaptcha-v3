@@ -87,7 +87,7 @@ php artisan vendor:publish --provider="Torralbodavid\SimpleRecaptchaV3\SimpleRec
 
 ### Customize snippets
 
-You can customize @captcha() and @captcha_init snippets by publishing the views on your project
+You can customize @captcha and @captcha_init snippets by publishing the views on your project
 
 ```bash
 php artisan vendor:publish --provider="Torralbodavid\SimpleRecaptchaV3\SimpleRecaptchaV3ServiceProvider" --tag=views
