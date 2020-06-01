@@ -13,7 +13,7 @@ This repository contains simple reCAPTCHA v3 integration for your Laravel applic
 You can install the package via composer:
 
 ```bash
-    composer require torralbodavid/simple-recaptcha-v3
+composer require torralbodavid/simple-recaptcha-v3
 ```
 
 ## Usage
@@ -23,8 +23,8 @@ You can install the package via composer:
 Override xxxxx with your reCaptcha v3 keys. Get yours [here](https://www.google.com/recaptcha/admin)
 
 ```
-    CAPTCHA_SITE_KEY=xxxxx
-    CAPTCHA_SECRET_KEY=xxxxx
+CAPTCHA_SITE_KEY=xxxxx
+CAPTCHA_SECRET_KEY=xxxxx
 ```
 
 Optionally, you can publish the config file of the package. You will be able to customize advanced settings, such as:
@@ -35,8 +35,8 @@ Optionally, you can publish the config file of the package. You will be able to 
 * Hide reCaptcha badge
 * Prefer navigator language on reCaptcha badge
 
-```
-    php artisan vendor:publish --provider="Torralbodavid\SimpleRecaptchaV3\SimpleRecaptchaV3ServiceProvider" --tag=config
+```bash
+php artisan vendor:publish --provider="Torralbodavid\SimpleRecaptchaV3\SimpleRecaptchaV3ServiceProvider" --tag=config
 ```
 
 2. To get started, you must include at the very bottom of your head tag from the pages you want to protect with reCaptcha, the `@captcha_init` blade directive. This will start loading Google reCAPTCHA API.
@@ -82,15 +82,15 @@ Optionally, you can publish the config file of the package. You will be able to 
 You can customize reCaptcha v3 error messages by publishing the translations on your project.
 
 ```bash
-    php artisan vendor:publish --provider="Torralbodavid\SimpleRecaptchaV3\SimpleRecaptchaV3ServiceProvider" --tag=lang
+php artisan vendor:publish --provider="Torralbodavid\SimpleRecaptchaV3\SimpleRecaptchaV3ServiceProvider" --tag=lang
 ```
 
 ### Customize snippets
 
-You can customize @captcha() and @captcha_init snippets by publishing the views on your project
+You can customize @captcha and @captcha_init snippets by publishing the views on your project
 
 ```bash
-    php artisan vendor:publish --provider="Torralbodavid\SimpleRecaptchaV3\SimpleRecaptchaV3ServiceProvider" --tag=views
+php artisan vendor:publish --provider="Torralbodavid\SimpleRecaptchaV3\SimpleRecaptchaV3ServiceProvider" --tag=views
 ```
 
 ### Disable reCaptcha v3 integration in tests
@@ -98,13 +98,13 @@ You can customize @captcha() and @captcha_init snippets by publishing the views 
 You can easily disable reCaptcha v3 integration in your tests by adding the following configuration on them
 
 ```php
-   config()->set('simple-recaptcha-v3.active', false);
+config()->set('simple-recaptcha-v3.active', false);
 ```
 
 ### Testing
 
 ``` bash
-    composer test
+composer test
 ```
 
 ### Changelog

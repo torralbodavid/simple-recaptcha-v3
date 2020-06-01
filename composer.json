@@ -45,10 +45,7 @@
         "laravel": {
             "providers": [
                 "Torralbodavid\\SimpleRecaptchaV3\\SimpleRecaptchaV3ServiceProvider"
-            ],
-            "aliases": {
-                "SimpleRecaptchaV3": "Torralbodavid\\SimpleRecaptchaV3\\SimpleRecaptchaV3Facade"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
