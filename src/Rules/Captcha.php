@@ -47,8 +47,8 @@ class Captcha implements Rule
      */
     public function message()
     {
-        if($this->serviceResponse['error-codes'] === null) {
-            return "simple-recaptcha-v3::messages.response-null";
+        if ($this->serviceResponse['error-codes'] === null) {
+            return 'simple-recaptcha-v3::messages.response-null';
         }
 
         return "simple-recaptcha-v3::messages.{$this->serviceResponse['error-codes'][0]}";
