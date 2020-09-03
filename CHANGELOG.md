@@ -2,6 +2,11 @@
 
 All notable changes to `simple-recaptcha-v3` will be documented in this file
 
+## 1.2.2 - 2020-09-03
+
+### Updates
+- Improve PHPUnit fixture methods [07068e8](https://github.com/torralbodavid/simple-recaptcha-v3/commit/07068e8c4803b5aba279c77925e59cb052f8feae)
+
 ## 1.2.0 - 2020-06-01
 
 ### Features
