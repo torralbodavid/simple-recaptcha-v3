@@ -6,7 +6,7 @@ use Torralbodavid\SimpleRecaptchaV3\Rules\Captcha as CaptchaRule;
 
 class RuleTest extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
