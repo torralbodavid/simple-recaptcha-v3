@@ -2,6 +2,11 @@
 
 All notable changes to `simple-recaptcha-v3` will be documented in this file
 
+## 1.3.0 - 2020-09-09
+
+### Features
+- Add Laravel 8 support [495a3aa](https://github.com/torralbodavid/simple-recaptcha-v3/commit/495a3aaa7750dce060239c86599c395a682269a1)
+
 ## 1.2.2 - 2020-09-03
 
 ### Updates
