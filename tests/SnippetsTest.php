@@ -77,7 +77,7 @@ class SnippetsTest extends TestCase
         config()->set('simple-recaptcha-v3.active', true);
         $renderedView = view('captcha')->render();
 
-        $this->assertStringContainsString('<script async defer src="https://www.google.com/recaptcha/api.js?render=', $renderedView);
+        $this->assertStringContainsString('<script defer src="https://www.google.com/recaptcha/api.js?render=', $renderedView);
         $this->assertStringContainsString('function prepareCaptcha(action, id) {', $renderedView);
         $this->assertStringContainsString('<input type="hidden" name="recaptcha_response"', $renderedView);
     }
