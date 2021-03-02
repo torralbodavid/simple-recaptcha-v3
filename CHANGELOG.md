@@ -2,6 +2,14 @@
 
 All notable changes to `simple-recaptcha-v3` will be documented in this file
 
+## 1.4.0 - 2021-03-02
+
+### Features
+- Add PHP 8 support [f947472](https://github.com/torralbodavid/simple-recaptcha-v3/commit/f947472af9e17bd738db2acc9720c81076cdf05f)
+
+### Bug fixes
+- Remove async attribute to avoid errors. Keep defer as it executes before DOMContentLoaded. [a2804d4](https://github.com/torralbodavid/simple-recaptcha-v3/commit/a2804d4b42ccb091c1d4ae3f571d741239d022f1)
+
 ## 1.3.0 - 2020-09-09
 
 ### Features
