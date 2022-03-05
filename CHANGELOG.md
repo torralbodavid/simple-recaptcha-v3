@@ -2,6 +2,14 @@
 
 All notable changes to `simple-recaptcha-v3` will be documented in this file
 
+## 1.5.0 - 2022-03-05
+
+### Features
+- Add support for Laravel 9 [d18665d](https://github.com/torralbodavid/simple-recaptcha-v3/commit/d18665d713a9926a40bf93fff49b4136b1f24338)
+
+### Updates
+- Add github tests workflow and stop using styleci, scrutinizer and travis services [8e78de7](https://github.com/torralbodavid/simple-recaptcha-v3/commit/8e78de72b6c1464190d150fd7148f0dbeef3fbce)
+
 ## 1.4.0 - 2021-03-02
 
 ### Features
