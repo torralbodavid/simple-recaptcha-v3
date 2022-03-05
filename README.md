@@ -1,8 +1,7 @@
 # Simple reCAPTCHA v3 integration
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/torralbodavid/simple-recaptcha-v3.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/simple-recaptcha-v3)
-[![Build Status](https://travis-ci.org/torralbodavid/simple-recaptcha-v3.svg?branch=master)](https://travis-ci.org/torralbodavid/simple-recaptcha-v3)
-[![StyleCI](https://github.styleci.io/repos/263758912/shield)](https://github.styleci.io/repos/263758912)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/torralbodavid/simple-recaptcha-v3/run-tests?label=tests)
 [![Quality Score](https://img.shields.io/scrutinizer/g/torralbodavid/simple-recaptcha-v3.svg?style=flat-square)](https://scrutinizer-ci.com/g/torralbodavid/simple-recaptcha-v3)
 [![Total Downloads](https://img.shields.io/packagist/dt/torralbodavid/simple-recaptcha-v3.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/simple-recaptcha-v3)
 
